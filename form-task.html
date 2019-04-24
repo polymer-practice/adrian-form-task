@@ -5,8 +5,13 @@
     <style>
       :host {
         display: block;
-        font-size: 15px;
-        font-weight: 300;
+        --primay-color: var(--primary-color-form-task, #3f51b5);
+        --secoundary-color: var(--secoundary-color-form-task, #ffffff);
+        --font-size: var(--font-size-form-task, 15px);
+        --font-weight: var(--font-weight-form-task, 300);
+
+        font-size: var(--font-size);
+        font-weight: var(--font-weight);
       }
 
       .task-form {
@@ -22,22 +27,24 @@
         margin: 5px 0px;
         border-radius: 4px;
         font-size: 20px;
+        @apply --task-input
       }
 
       .task-input:focus {
         outline: none;
-        border: 3px solid #3f51b5;
+        border: 3px solid var(--primay-color);
       }
 
       .task-button {
         max-width: 75px;
         height: 38px;
         margin-left: auto;
-        background-color: #3f51b5;
+        background-color: var(--primay-color);
         border-radius: 4px;
         border: 1px solid #ccc;
         cursor: pointer;
-        color: #ffffff;
+        color: var(--secoundary-color);
+        @apply --task-button
       }
 
       .task-button:hover {
