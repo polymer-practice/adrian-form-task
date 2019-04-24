@@ -28,8 +28,22 @@
       <h3>Basic form-task demo</h3>
       <demo-snippet>
         <template>
-          <form-task input-label="Manias de la abuela" button-text="Enviar al asilo"></form-task>
+          <form-task
+          id='form-task'
+          input-label="Manias de la abuela"
+          button-text="Enviar al asilo"
+          ></form-task>
         </template>
+        <script>
+          function actionSubmit (event) {
+            console.log('Submit in form: ', event.detail.inputValue);
+          }
+
+          let formTask = document.getElementById('form-task');
+          formTask.inputLabel = 'Manias de la madre';
+          console.log('Input label: ', formTask.inputLabel);
+          formTask.addEventListener('form-task-submit', actionSubmit);
+        </script>
       </demo-snippet>
     </div>
   </body>
